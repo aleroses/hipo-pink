@@ -45,7 +45,7 @@ body {
 .main {
   display: grid;
   justify-items: center;
-  padding: 25px 30px;
+  padding: 20px 25px;
   gap: 20px;
   background-color: var(--second-color);
 }
@@ -67,12 +67,14 @@ body {
   cursor: pointer;
 }
 
-.about__title {
+.about__title,
+.interest__title {
   font-size: 16px;
   margin: 0 0 5px 0;
 }
 
-.about__p {
+.about__p,
+.interest__paragraph {
   font-size: 12px;
 }
 
@@ -89,3 +91,10 @@ body {
 }
 
 /*  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); */
+
+/* @media screen and (min-width: 800px) {
+  .card {
+    max-height: 660px;
+  }
+}
+ */

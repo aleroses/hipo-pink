@@ -13,8 +13,12 @@ data.map((info) => {
   const anchor = document.createElement("a");
 
   const about = document.createElement("div");
-  const h3 = document.createElement("h3");
+  const aboutTitle = document.createElement("h3");
   const p = document.createElement("p");
+
+  const interests = document.createElement("div");
+  const interestTitle = document.createElement("h3");
+  const interestParagraph = document.createElement("p");
 
   const footer = document.createElement("footer");
   const fbIcon = document.createElement("img");
@@ -30,12 +34,14 @@ data.map((info) => {
   span.classList.add("career");
   anchor.classList.add("web");
   about.classList.add("about");
-  h3.classList.add("about__title");
+  aboutTitle.classList.add("about__title");
   p.classList.add("about__p");
-  footer.classList.add("footer")
-  fbIcon.classList.add("fbIcon")
-  inIcon.classList.add("inIcon")
-
+  footer.classList.add("footer");
+  fbIcon.classList.add("fbIcon");
+  inIcon.classList.add("inIcon");
+  interests.classList.add("interests");
+  interestTitle.classList.add("interest__title");
+  interestParagraph.classList.add("interest__paragraph");
 
   img.src = info.img;
   img.alt = `Photograph of ${info.name}`;
@@ -44,8 +50,11 @@ data.map((info) => {
   span.textContent = info.career;
   anchor.textContent = info.web;
 
-  h3.textContent = "About";
+  aboutTitle.textContent = "About";
   p.textContent = info.about;
+
+  interestTitle.textContent = "Interests";
+  interestParagraph.textContent = info.interests;
 
   fbIcon.src = info.media[0];
   inIcon.src = info.media[1];
@@ -54,8 +63,9 @@ data.map((info) => {
 
   figure.append(img);
   personalData.append(h2, span, anchor);
-  about.append(h3, p);
-  main.append(personalData, about);
+  about.append(aboutTitle, p);
+  interests.append(interestTitle, interestParagraph);
+  main.append(personalData, about, interests);
   footer.append(fbIcon, inIcon);
 
   card.append(figure, main, footer);
